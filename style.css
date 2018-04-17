@@ -1,0 +1,410 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: rgba(0, 0, 0, 0.38);
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(0, 0, 0, 0.54);
+}
+
+a:active {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+body {
+  background-color: #eee;
+}
+
+#container {
+  width: 80%;
+  min-width: 450px;
+  height: 100%;
+  margin: 50px auto;
+  padding-bottom: 50px;
+}
+
+#container header {
+  text-align: center;
+}
+
+#container header h1 {
+  font-size: 3em;
+  margin: 0;
+}
+
+#container #app {
+  width: 80%;
+  min-width: 350px;
+  margin: 50px auto;
+  background-color: #fff;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+#topBar,
+#description {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-flow: row nowrap;
+  padding: 1em;
+  padding-left: 0;
+}
+
+#topBar input,
+#topBar textarea,
+#topBar button,
+#description input,
+#description textarea,
+#description button {
+  width: 100%;
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 4px 8px;
+}
+
+#topBar button,
+#description button {
+  background-color: #BBDEFB;
+  font-size: 1em;
+  border-radius: 5px;
+}
+
+#topBar textarea,
+#description textarea {
+  height: 100%;
+  resize: none;
+}
+
+#topBar .rowRightOne,
+#description .rowRightOne {
+  flex: 4;
+}
+
+#topBar .rowRightTwo,
+#description .rowRightTwo {
+  flex: 1;
+  margin: 0 10px;
+}
+
+#topBar .rowRightTwo button,
+#description .rowRightTwo button {
+  margin: 0 10px;
+  height: 100%;
+  text-align: center;
+}
+
+#app #description {
+  max-height: 200px;
+  overflow: hidden;
+  opacity: 1;
+  transition: all .35s linear;
+}
+
+#app #description.off {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+#app #description.off {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.rowLeft {
+  width: 12%;
+  text-align: center;
+}
+
+.rowRight {
+  flex: 1;
+}
+
+#list {
+  min-height: 50vh;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+#list .item_done {
+  text-decoration: line-through;
+  color: rgba(0, 0, 0, 0.54) !important;
+}
+
+#list .hidden {
+  display: none !important;
+}
+
+#list > div {
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+#list .item {
+  margin: 5px;
+  display: flex;
+  flex-flow: row nowrap;
+}
+
+#list .rowLeft .label {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+#list .rowLeft .label input {
+  position: absolute;
+  opacity: 0;
+}
+
+#list .rowLeft .label .checkmark {
+  display: inline-block;
+  margin: 0 auto;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #eee;
+  transition: all .5s ease;
+}
+
+#list .rowLeft .label:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+#list .rowLeft .label input:checked ~ .checkmark {
+  background-color: green;
+}
+
+#list .rowLeft .label {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#list .rowLeft .label input {
+  position: absolute;
+  opacity: 0;
+}
+
+#list .rowLeft .label .checkmark {
+  display: inline-block;
+  margin: 0 auto;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #BBDEFB;
+  transition: all .5s ease;
+}
+
+#list .rowLeft .label:hover input ~ .checkmark {
+  background-color: #2196F3;
+}
+
+#list .rowLeft .label input:checked ~ .checkmark {
+  background-color: #4CAF50;
+}
+
+#list .rowRight {
+  display: flex;
+}
+
+#list .rowRight .content {
+  min-width: 100px;
+  flex: 1;
+}
+
+#list .rowRight .content p {
+  margin: 5px;
+}
+
+#list .rowRight .content p:first-child {
+  color: rgba(0, 0, 0, 0.87);
+  font-size: 1em;
+}
+
+#list .rowRight .content p:last-child {
+  color: rgba(0, 0, 0, 0.54);
+  font-size: .85em;
+}
+
+#list .rowRight .time {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding-right: 10px;
+  font-size: .85em;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+#list .rowRight .buttons {
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  transition: opacity .5s ease;
+  padding-right: 10px;
+}
+
+#list .rowRight .buttons .material-icons {
+  color: rgba(76, 175, 80, 0.5);
+  padding: 0 2px;
+}
+
+#list .rowRight .buttons .material-icons:hover {
+  color: #4CAF50;
+}
+
+#bottomBar {
+  border-top: 1px solid rgba(0, 0, 0, 0.18);
+  display: flex;
+  flex-flow: row nowrap;
+  align-content: space-between;
+  padding: 0 1em;
+  color: rgba(0, 0, 0, 0.38);
+}
+
+#bottomBar a {
+  padding: 1px 3px;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+}
+
+#bottomBar > div {
+  flex: 3;
+  text-align: center;
+}
+
+#bottomBar > div:first-of-type {
+  flex: 1;
+  text-align: left;
+}
+
+#bottomBar > div:last-of-type {
+  flex: 1;
+  text-align: right;
+}
+
+#container .modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 100;
+  padding-top: 200px;
+  width: 100%;
+  height: 100%;
+}
+
+#container .modal-content {
+  position: relative;
+  background-color: #eee;
+  margin: 0 auto;
+  padding: 0;
+  border: 1px solid rgba(0, 0, 0, 0.18);
+  width: 30%;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s;
+}
+
+@-webkit-keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+#container #close_modal {
+  margin-top: 6px;
+  color: rgba(0, 0, 0, 0.38);
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#container #close_modal:hover, #container #close_modal:focus {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+#container .modal-header {
+  padding: 8px 16px;
+  background-color: #2196F3;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+#container .modal-body {
+  padding: 4px 16px;
+}
+
+#container .modal-body input,
+#container .modal-body textarea {
+  border: 2px solid rgba(0, 0, 0, 0.18);
+  border-radius: 5px;
+  color: rgba(0, 0, 0, 0.87);
+  padding: 4px 8px;
+}
+
+#container .modal-body input {
+  width: 50%;
+  margin-left: 20px;
+}
+
+#container .modal-body textarea {
+  width: 80%;
+  margin-left: 20px;
+  resize: none;
+}
+
+#container .modal-body input[type=submit] {
+  width: 80px;
+  height: 40px;
+  display: block;
+  padding: 4px 8px;
+  margin: 20px auto;
+  background-color: #BBDEFB;
+}
+
+#container #nameWarn,
+#container #descWarn {
+  display: none;
+  margin: 0;
+  margin-left: 20px;
+  color: red;
+}
+/*# sourceMappingURL=style.css.map */

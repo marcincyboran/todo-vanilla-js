@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Todos - Marcin Cyboran</title>
+</head>
+
+<body>
+
+    <section id="container">
+        <header>
+            <h1>Another todo list mehh</h1>
+        </header>
+        <section id="app">
+
+            <div id="topBar">
+                <div class="rowLeft">
+                    <i class="material-icons">keyboard_arrow_down</i>
+                </div>
+                <div class="rowRight">
+                    <input type="text" id="nameInput" maxlength="20" placeholder="Note title...">
+                </div>
+            </div>
+
+            <div id="description" class="off">
+                <div class="rowLeft">
+                </div>
+                <div class="rowRightOne">
+                    <textarea id="descriptionInput" maxlength="200" placeholder="Note description..."></textarea>
+                </div>
+                <div class="rowRightTwo">
+                    <button id="submitButton">Add</button>
+                </div>
+            </div>
+
+            <div id="list">
+            </div>
+
+            <div id="bottomBar">
+                <div>
+                    <p id="itemsLeft">
+                        Tasks left:
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <a href="#All">All</a>
+                        <a href="#Active">Active</a>
+                        <a href="#Completed">Done</a>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        <a href="#clearDone">Clear done</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="myModal" class="modal">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <i class="material-icons" id="close_modal">close</i>
+                    <h2>Edit note </h2>
+                </div>
+
+                <div class="modal-body">
+                    <form id="editForm">
+                        <label>
+                            <p>Note name: </p>
+                            <input type="text" name="editName" id="editName" maxlength="20">
+                            <p id="nameWarn">Alphabet symbols and digits</p>
+                        </label>
+                        <label>
+                            <p>Note description </p>
+                            <textarea name="editDescription" id="editDescription" maxlength="200"></textarea>
+                            <p id="descWarn">Alphabet symbols, digits and following symbols: .,;:!-+=$%@#()</p>
+                        </label>
+                        <input type="submit" value="Edit">
+                    </form>
+                </div>
+            </div>
+        </section>
+        <p>DEV INFO - for name only a-z 0-9</p>
+        <p>DEV INFO - for description a-z 0-9 and .,;:!-+=$%@#() </p>
+        
+    </section>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
